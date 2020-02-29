@@ -3,7 +3,6 @@ TERM="xterm-256color"
 #export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export ZSH="/home/nb/.oh-my-zsh"
 
-
 # Shell Theme
 ZSH_THEME="spaceship" #"jovial" # typewritten
 
@@ -113,6 +112,8 @@ alias reload="source ~/.zshrc"
 alias vconfig="vim ~/.config/nvim/init.vim"
 alias zconfig="vim ~/.zshrc"
 alias tconfig="vim ~/.tmux.conf"
+alias sudo='sudo '
+
 
 alias ll='colorls -lA --sd --group-directories-first'
 alias ls='colorls --group-directories-first'
