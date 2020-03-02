@@ -158,3 +158,9 @@ alias open="nautilus"
 
 # reload bashrc
 alias reload="source ~/.bashrc"
+
+# use starship shell prompt
+export STARSHIP_CONFIG=~/.starship.toml
+eval "$(starship init $0)"
+
+
