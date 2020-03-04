@@ -75,11 +75,16 @@ alias open="nautilus"
 # reload zshrc
 alias reload="source ~/.zshrc"
 # alias to edit config file
-alias vconfig="vim ~/.config/nvim/init.vim"
-alias zconfig="vim ~/.zshrc"
-alias tconfig="vim ~/.tmux.conf"
-alias sudo='sudo '
+alias vconfig="sudo vim ~/dotfiles/init.vim"
+alias zconfig="sudo vim ~/dotfiles/.zshrc"
+alias tconfig="sudo vim ~/dotfiles/.tmux.conf"
 
+alias sudo="sudo "
+alias syu="sudo apt-get update -y"
+alias syi="sudo apt-get install '$*' -y"
+alias syyu="sudo apt-get upgrade -y"
+alias syau="sudo apt-get autoremove '$*' -y"
+alias sypau="sudo apt-get --purge autoremove'$*' -y" 
 
 alias ll='colorls -lA --sd --group-directories-first'
 alias ls='colorls --group-directories-first'
