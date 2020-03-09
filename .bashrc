@@ -126,7 +126,8 @@ alias backupfiles="cd /media/nb/BackupFiles"
 alias pbcopy="xclip -sel clip"
 
 # emulator and adbmanager
-export ANDROID_HOME=$HOME/Android/Sdk
+export REPO_OS_OVERRIDE='linux'
+export ANDROID_HOME=$HOME/Android/Sdk/
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -139,10 +140,28 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=/media/nb/Devs/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /home/nb/.local/bin/virtualenvwrapper.sh
+alias py3="workon py3env"
 
+# reload zshrc
+alias reload="source ~/.zshrc"
+
+# alias to edit config file
+alias vconfig="sudo vim ~/dotfiles/init.vim"
+alias zconfig="sudo vim ~/dotfiles/.zshrc"
+alias tconfig="sudo vim ~/dotfiles/.tmux.conf"
+alias bconfig="sudo vim ~/dotfiles/.bashrc"
+
+alias sudo="sudo "
+alias syu="sudo apt-get update -y"
+alias syi="sudo apt-get install '$*' -y"
+alias syyu="sudo apt-get upgrade -y"
+alias syau="sudo apt-get autoremove '$*' -y"
+alias sypau="sudo apt-get --purge autoremove'$*' -y" 
 
 alias ll='colorls -lA --sd --group-directories-first'
 alias ls='colorls --group-directories-first'
+alias corep='colorls --report'
+alias cogs='colorls --gs'
 
 source $(dirname $(gem which colorls))/tab_complete.sh
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90'
@@ -163,4 +182,5 @@ alias reload="source ~/.bashrc"
 export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init $0)"
 
-
+# python alias
+alias ipython="ipython3"

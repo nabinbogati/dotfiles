@@ -50,7 +50,9 @@ alias backupfiles="cd /media/nb/BackupFiles"
 alias pbcopy="xclip -sel clip"
 
 # emulator and adbmanager
+export REPO_OS_OVERRIDE="linux"
 export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -63,6 +65,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=/media/nb/BackupFiles/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /home/nb/.local/bin/virtualenvwrapper.sh
+alias py3="workon py3env"
 
 # change power settings
 alias use_nvidia="sudo system76-power graphics nvidia"
@@ -78,6 +81,7 @@ alias reload="source ~/.zshrc"
 alias vconfig="sudo vim ~/dotfiles/init.vim"
 alias zconfig="sudo vim ~/dotfiles/.zshrc"
 alias tconfig="sudo vim ~/dotfiles/.tmux.conf"
+alias bconfig="sudo vim ~/dotfiles/.bashrc"
 
 alias sudo="sudo "
 alias syu="sudo apt-get update -y"
