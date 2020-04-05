@@ -73,7 +73,7 @@ alias use_intel="sudo system76-power graphics intel"
 alias use_hybrid="sudo system76-power graphics hybrid"
 
 # change alias for nautilus
-alias open="nautilus"
+alias open="nautilus . & disown"
 
 # reload zshrc
 alias reload="source ~/.zshrc"
@@ -84,11 +84,11 @@ alias tconfig="sudo vim ~/dotfiles/.tmux.conf"
 alias bconfig="sudo vim ~/dotfiles/.bashrc"
 
 alias sudo="sudo "
-alias syu="sudo apt-get update -y"
+alias syup="sudo apt-get update -y"
 alias syi="sudo apt-get install '$*' -y"
-alias syyu="sudo apt-get upgrade -y"
-alias syau="sudo apt-get autoremove '$*' -y"
-alias sypau="sudo apt-get --purge autoremove'$*' -y" 
+alias syug="sudo apt-get upgrade -y"
+alias sya="sudo apt-get autoremove '$*' -y"
+alias syp="sudo apt-get --purge autoremove'$*' -y" 
 
 alias ll='colorls -lA --sd --group-directories-first'
 alias ls='colorls --group-directories-first'
