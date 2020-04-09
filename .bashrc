@@ -57,8 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[0;36m\]@\[\033[01;33m\]\h\[\033[00m\]]-[\[\033[01;34m\]\w\[\033[00m\]]\[\033[01;36m\]$(__git_ps1)\[\033[00m\]\n↳ '
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	#PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[0;36m\]@\[\033[01;33m\]\h\[\033[00m\]]-[\[\033[01;34m\]\w\[\033[00m\]]\[\033[01;36m\]$(__git_ps1)\[\033[00m\]\n↳ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -117,15 +117,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#nb@viper
-# alias to other drives
-alias backupfiles="cd /media/nb/BackupFiles"
 
+#-------------------nb@viper(user_added)------------------------------#
 
-# xclip pbcopy
+# alias to second_disk 
+alias cdbkf="cd /media/nb/BackupFiles"
+
+# xclip pbcopy to copy contents of files, etc
 alias pbcopy="xclip -sel clip"
 
-# emulator and adbmanager
+# android_emulator and adbmanager
 export REPO_OS_OVERRIDE='linux'
 export ANDROID_HOME=$HOME/Android/Sdk/
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -134,7 +135,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
-# workon and virtualenv wrapper nb@viper
+# workon env_variable and virtualenvwrapper
 export PATH=/home/nb/.local/bin/:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=/media/nb/Devs/Projects
@@ -146,17 +147,16 @@ alias py3="workon py3env"
 alias reload="source ~/.zshrc"
 
 # alias to edit config file
-alias vconfig="sudo vim ~/dotfiles/init.vim"
-alias zconfig="sudo vim ~/dotfiles/.zshrc"
-alias tconfig="sudo vim ~/dotfiles/.tmux.conf"
-alias bconfig="sudo vim ~/dotfiles/.bashrc"
+alias vconfig="vim ~/dotfiles/init.vim"
+alias zconfig="vim ~/dotfiles/.zshrc"
+alias tconfig="vim ~/dotfiles/.tmux.conf"
+alias bconfig="vim ~/dotfiles/.bashrc"
 
 alias sudo="sudo "
-alias syu="sudo apt-get update -y"
-alias syi="sudo apt-get install '$*' -y"
-alias syyu="sudo apt-get upgrade -y"
-alias syau="sudo apt-get autoremove '$*' -y"
-alias sypau="sudo apt-get --purge autoremove'$*' -y" 
+alias sup="sudo apt-get update -y"
+alias sug="sudo apt-get upgrade -y"
+alias sin="sudo apt-get install '$*' -y"
+alias sap="sudo apt-get autoremove --purge '$*' -y"
 
 alias ll='colorls -lA --sd --group-directories-first'
 alias ls='colorls --group-directories-first'
@@ -180,7 +180,10 @@ alias reload="source ~/.bashrc"
 
 # use starship shell prompt
 export STARSHIP_CONFIG=~/.starship.toml
-eval "$(starship init $0)"
+eval "$(starship init bash)"
 
-# python alias
-alias ipython="ipython3"
+# history time format
+HISTTIMEFORMAT="%F %T "
+
+# go
+export PATH=$PATH:/usr/local/go/bin
