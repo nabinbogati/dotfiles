@@ -1,8 +1,9 @@
 set t_Co=256
+set termguicolors
 set clipboard+=unnamedplus
 
-let g:python_host_prog="/home/nb/.virtualenvs/py3nvim/bin/python"
-let g:python3_host_prog="/home/nb/.virtualenvs/py3nvim/bin/python"
+let g:python_host_prog="/home/nb/.virtualenvs/pynvim2/bin/python"
+let g:python3_host_prog="/home/nb/.virtualenvs/pynvim3/bin/python"
 
 "Plugin call
 
@@ -10,45 +11,51 @@ call plug#begin('~/nvim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-commentary'
-    "Plug 'ycm-core/YouCompleteMe'	
-    Plug 'Raimondi/delimitMate'
-    Plug 'honza/vim-snippets'
+ 	Plug 'ycm-core/YouCompleteMe'
+	Plug 'tpope/vim-obsession'
+   	Plug 'Raimondi/delimitMate'
+   	Plug 'honza/vim-snippets'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'kien/ctrlp.vim'
 	Plug 'vim-syntastic/syntastic'
-    Plug 'mattn/emmet-vim'
-    Plug 'Yggdroot/indentLine'
+   	Plug 'mattn/emmet-vim'
+   	Plug 'Yggdroot/indentLine'
 	Plug 'vim-airline/vim-airline'
    	Plug 'vim-airline/vim-airline-themes'
    	Plug 'tpope/vim-surround'
 	Plug 'dracula/vim', { 'name': 'dracula' }
-    Plug 'ryanoasis/vim-devicons'
+   	Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Plugin end
 
 " airline fonts
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula'
+let g:airline_theme='dracula' "'dracula'
+
 
 " devicons:
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_statusline = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
 
 "  themes
 syntax enable
 set background=dark
-"set background=light
 
-let g:solarized_termcolors= 16
+let g:solarized_termcolors=256 "256
 let g:solarized_termtrans = 0
-let g:solarized_degrade = 1         
+let g:solarized_degrade = 1
 let g:solarized_bold = 1
 let g:solarized_underline = 1        
 let g:solarized_italic = 1          
-let g:solarized_contrast = "high"   " high or low
-let g:solarized_visibility= "high"  " high or low
+let g:solarized_contrast = "low"   " high or low
+let g:solarized_visibility= "low"  " high or low
  
 
 let g:gruvbox_termcolors=256
@@ -56,7 +63,7 @@ let g:gruvbox_contrast_light='hard' " medium, hard
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_strings=1
-colorscheme solarized
+colorscheme solarized8 "dracula gruvbox solarized
 
 
 " Disable arrow_keys
@@ -107,3 +114,4 @@ nnoremap wq :silent! normal mpeld bhd `ph<CR>
 "Emmet mappings
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
