@@ -1,12 +1,11 @@
-set t_Co=256
 set termguicolors
 set clipboard+=unnamedplus
 
 let g:python_host_prog="/home/nb/.virtualenvs/pynvim2/bin/python"
 let g:python3_host_prog="/home/nb/.virtualenvs/pynvim3/bin/python"
 
-"Plugin call
 
+"Plugin call
 call plug#begin('~/nvim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'preservim/nerdtree'
@@ -26,12 +25,12 @@ call plug#begin('~/nvim/plugged')
 	Plug 'dracula/vim', { 'name': 'dracula' }
    	Plug 'ryanoasis/vim-devicons'
 call plug#end()
-
 " Plugin end
+
 
 " airline fonts
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula' "'dracula'
+let g:airline_theme='dracula'
 
 
 " devicons:
@@ -48,6 +47,7 @@ let g:airline#extensions#tabline#formatter = 'default'
 syntax enable
 set background=dark
 
+" solarized
 let g:solarized_termcolors=256 "256
 let g:solarized_termtrans = 0
 let g:solarized_degrade = 1
@@ -55,15 +55,15 @@ let g:solarized_bold = 1
 let g:solarized_underline = 1        
 let g:solarized_italic = 1          
 let g:solarized_contrast = "low"   " high or low
-let g:solarized_visibility= "low"  " high or low
- 
+let g:solarized_visibility= "low"  " high or low 
 
+" gruvbox
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='hard' " medium, hard
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_strings=1
-colorscheme solarized8 "dracula gruvbox solarized
+colorscheme solarized8 "dracula gruvbox
 
 
 " Disable arrow_keys
@@ -71,6 +71,7 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
 
 " vim config
 syntax on                       " show syntax hightlighting
@@ -86,6 +87,7 @@ set shiftwidth=4                " use indents of 4 spaces
 set expandtab                   " tabs are spaces, not tabs
 set tabstop=4                   " an indentation every fourcolumns
 
+
 " NerdTree Ignore Files and Folders
 let NERDTreeIgnore = ['\.pyc$', '__pycache__','.vscode', '_DS_Store']                                      " ignore files and folder in nerd tree
 
@@ -93,15 +95,13 @@ autocmd StdinReadPre * let s:std_in=1 "start nerd-tree on vim startup
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " exit nerd-tree if user exists last vim window
 autocmd VimEnter * NERDTree
 
+
 " autosave on focuslost
 au FocusLost * :wa
 
 " autosave on buffer change
-set autowrite
-"set autowriteall
+set autowriteall
 
-"kite setup
-let g:kite_tab_complete=1
 
 " 'quote' a word
 nnoremap qw :silent! normal mpea'<Esc>bi'<Esc>`pl
