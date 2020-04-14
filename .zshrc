@@ -57,11 +57,11 @@ bindkey '^ ' autosuggest-execute
 
 # Preferred editor for local and remote sessions
 
- if [[ -n $SSH_CONNECTION ]]; then
+if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
- else
+else
    export EDITOR='nvim'
- fi
+fi
 
 # alias to other drives
 alias cdbkf="cd /media/nb/BackupFiles"
@@ -124,4 +124,17 @@ export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init /usr/bin/zsh)"
 
 
+# go programming
 export PATH=$PATH:/usr/local/go/bin
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='nvim'
+else
+    export EDITOR='nvim'
+fi
+
+# virtualenv fix inside tmux
+if [ -n "$VIRTUAL_ENV" ]; then
+    source $VIRTUAL_ENV/bin/activate;
+fi
