@@ -1,28 +1,21 @@
 # Don't print a new line at the start of the prompt
 add_newline = true
 
-# Replace the "❯" symbol in the prompt with "➜"
 [character]
+disabled = flase
 symbol = "➜ "
 
-# bash username
+
 [username]
 disabled = false
 show_always = true
 
-# bash hostname
+
 [hostname]
 ssh_only = false
 disabled = false
 
+
 [directory]
+disabled = false
 truncation_length = 3
-
-[jobs]
-threshold = 4
-
-[virtualenv]
-symbol = "👾 "
-venv_version_name = true
-venv_prefix = "venv"
-
