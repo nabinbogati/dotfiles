@@ -23,12 +23,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# If set, the pattern "**" used in a pathname expansion context will match all files and zero or more directories and subdirectories.  #shopt -s globstar make less more friendly for non-text input files, see lesspipe(1) [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -173,7 +168,7 @@ alias use_intel="sudo system76-power graphics intel"
 alias use_hybrid="sudo system76-power graphics hybrid"
 
 # alias for nautilus
-alias open="nautilus"
+alias open="nautilus . & disown"
 
 # reload bashrc
 alias reload="source ~/.bashrc"
@@ -199,3 +194,10 @@ fi
 if [ -n "$VIRTUAL_ENV" ]; then
     source $VIRTUAL_ENV/bin/activate;
 fi
+
+# mount onedrives
+alias onedrivep="rclone --vfs-cache-mode writes mount onedrive: ~/nabin_bogati@outlook.com & disown"
+alias onedriveb="rclone --vfs-cache-mode writes mount onedrive_organization: ~/krishnaxi44073@nist.edu.np & disown"
+
+
+

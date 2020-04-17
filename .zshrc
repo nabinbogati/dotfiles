@@ -138,3 +138,7 @@ fi
 if [ -n "$VIRTUAL_ENV" ]; then
     source $VIRTUAL_ENV/bin/activate;
 fi
+
+# mount onedrives
+alias onedrivep="rclone --vfs-cache-mode writes mount onedrive: ~/nabin_bogati@outlook.com & disown"
+alias onedriveb="rclone --vfs-cache-mode writes mount onedrive_organization: ~/krishnaxi44073@nist.edu.np & disown"
