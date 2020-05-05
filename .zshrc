@@ -2,7 +2,58 @@ export TERM="xterm-256color"
 export ZSH="/home/nb/.oh-my-zsh"
 
 # Shell Theme
-ZSH_THEME=""
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Options section
+setopt correct                                                  # Auto correct mistakes
+setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+setopt nocaseglob                                               # Case insensitive globbing
+setopt rcexpandparam                                            # Array expension with parameters
+setopt nocheckjobs                                              # Don't warn about running processes when exiting
+setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+setopt nobeep                                                   # No beep
+setopt appendhistory                                            # Immediately append history instead of overwriting
+setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt autocd                                                   # if only directory path is entered, cd there.
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Add wisely, as too many plugins slow down shell startup.dd wisely, as too many plugins slow down shell startup.
 
@@ -22,12 +73,12 @@ plugins=(
         colored-man-pages   		# colored man pages
         virtualenvwrapper   		# activate virtualenvs 
      	virtualenv
-	    python              		# pyclean, pyfind pygrep
+	    python             		# pyclean, pyfind pygrep
         node
         npm
         systemd
         debian
-	    urltools
+	   urltools
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -55,16 +106,9 @@ bindkey '^ ' autosuggest-execute
 #bindkey '' autosuggest-enable:  # Re-enables suggestions.
 #bindkey '' autosuggest-toggle:  # Toggles between enabled/disabled suggestions.
 
-# Preferred editor for local and remote sessions
-
-if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nvim'
-else
-   export EDITOR='nvim'
-fi
 
 # alias to other drives
-alias cdbkf="cd /media/nb/BackupFiles"
+alias gbackup="cd /media/nb/BackupFiles"
 
 # xclip pbcopy
 alias pbcopy="xclip -sel clip"
@@ -80,11 +124,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
 # workon and virtualenv wrapper nb@viper
-export PATH=/home/nb/.local/bin/:$PATH
+export PATH=/home/nb/.local/bin:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=/media/nb/BackupFiles/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /home/nb/.local/bin/virtualenvwrapper.sh
+source /home/nb/.local/bin/virtualenvwrapper_lazy.sh
 
 # change power settings
 alias use_nvidia="sudo system76-power graphics nvidia"
@@ -140,5 +184,5 @@ if [ -n "$VIRTUAL_ENV" ]; then
 fi
 
 # mount onedrives
-alias onedrivep="rclone --vfs-cache-mode writes mount onedrive: ~/nabin_bogati@outlook.com & disown"
-alias onedriveb="rclone --vfs-cache-mode writes mount onedrive_organization: ~/krishnaxi44073@nist.edu.np & disown"
+alias onedrivep="rclone --vfs-cache-mode writes mount onedrive: your_onedrive_setup_here & disown"
+alias onedriveb="rclone --vfs-cache-mode writes mount onedrive_organization: your_onedrive_setup_here & disown"

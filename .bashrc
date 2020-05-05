@@ -116,7 +116,7 @@ fi
 #-------------------nb@viper(user_added)------------------------------#
 
 # alias to second_disk 
-alias cdbkf="cd /media/nb/BackupFiles"
+alias gbackup="cd /media/nb/BackupFiles"
 
 # xclip pbcopy to copy contents of files, etc
 alias pbcopy="xclip -sel clip"
@@ -133,9 +133,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # workon env_variable and virtualenvwrapper
 export PATH=/home/nb/.local/bin/:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=/media/nb/Devs/Projects
+export PROJECT_HOME=/media/nb/BackupFiles/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /home/nb/.local/bin/virtualenvwrapper.sh
+source /home/nb/.local/bin/virtualenvwrapper_lazy.sh
 alias py3="workon py3env"
 
 # reload zshrc
@@ -196,8 +196,8 @@ if [ -n "$VIRTUAL_ENV" ]; then
 fi
 
 # mount onedrives
-alias onedrivep="rclone --vfs-cache-mode writes mount onedrive: ~/nabin_bogati@outlook.com & disown"
-alias onedriveb="rclone --vfs-cache-mode writes mount onedrive_organization: ~/krishnaxi44073@nist.edu.np & disown"
+alias onedrivep="rclone --vfs-cache-mode writes mount onedrive: your_onedrive_setup_here & disown"
+alias onedriveb="rclone --vfs-cache-mode writes mount onedrive_organization: your_onedrive_setup_here & disown"
 
 
 
