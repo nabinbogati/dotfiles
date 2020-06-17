@@ -30,10 +30,8 @@ call plug#end()
 
 
 " you complete me disable preview
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
 
 " airline fonts
 let g:airline_powerline_fonts = 1
@@ -70,7 +68,7 @@ let g:gruvbox_contrast_light='hard' " medium, hard
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_strings=1
-colorscheme solarized8 "dracula gruvbox
+colorscheme gruvbox "solarized8 "dracula gruvbox
 
 
 " Disable arrow_keys
@@ -121,4 +119,3 @@ nnoremap wq :silent! normal mpeld bhd `ph<CR>
 "Emmet mappings
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
