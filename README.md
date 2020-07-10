@@ -1,5 +1,7 @@
 # My Dotfiles Configuration For Linux
 
+<img src="./assets/vim.png" width="200"><img src="./assets/bash.png" width="200"><img src="./assets/tmux.png" width="200"><img src="./assets/zsh.png" width="200">
+
 1. shell.conf
 2. starship.toml
 3. tmux.conf
