@@ -2,7 +2,7 @@
 add_newline = true
 
 [character]
-disabled = flase
+disabled = false
 symbol = "➜ "
 
 
