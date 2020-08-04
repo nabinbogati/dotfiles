@@ -31,6 +31,8 @@ call plug#end()
 
 " you complete me disable preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 0
 autocmd FileType vim let b:vcm_tab_complete = 'vim'
 
 " airline fonts
@@ -99,7 +101,6 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__','.vscode', '_DS_Store']           
 autocmd StdinReadPre * let s:std_in=1 "start nerd-tree on vim startup
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " exit nerd-tree if user exists last vim window
 autocmd VimEnter * NERDTree
-
 
 " autosave on focuslost
 au FocusLost * :wa
