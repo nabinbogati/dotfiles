@@ -37,7 +37,14 @@ autocmd FileType vim let b:vcm_tab_complete = 'vim'
 
 " airline fonts
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_theme='cool'
+
+" remove the filetype part
+let g:airline_section_a=''
+" remove separators for empty sections
+let g:airline_skip_empty_sections = 1
 
 
 " devicons:
@@ -45,7 +52,7 @@ let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 
@@ -55,22 +62,11 @@ syntax enable
 set background=dark
 
 " solarized
-let g:solarized_termcolors=256 "256
-let g:solarized_termtrans = 0
-let g:solarized_degrade = 1
-let g:solarized_bold = 1
-let g:solarized_underline = 1        
-let g:solarized_italic = 1          
-let g:solarized_contrast = "low"   " high or low
-let g:solarized_visibility= "low"  " high or low 
+let g:solarized_termcolors=256
 
 " gruvbox
 let g:gruvbox_termcolors=256
-let g:gruvbox_contrast_light='hard' " medium, hard
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_improved_strings=1
-let g:gruvbox_improved_strings=1
-colorscheme gruvbox "solarized8 "dracula gruvbox
+colorscheme gruvbox "solarized8 dracula gruvbox
 
 
 " Disable arrow_keys
