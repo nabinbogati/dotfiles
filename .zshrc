@@ -12,13 +12,9 @@ HIST_STAMPS="mm/dd/yyyy"
 
 
 plugins=(   
-            colorize
             git
-            tig
             python
             tmux
-            virtualenv
-            virtualenvwrapper
             vi-mode
             zsh-autosuggestions
             zsh-syntax-highlighting
@@ -26,10 +22,8 @@ plugins=(
         )
 source $ZSH/oh-my-zsh.sh
 
-ZSH_COLORIZE_TOOL=pygmentize
-ZSH_COLORIZE_STYLE="colorful"
-# accept current suggestion
-bindkey '^ ' autosuggest-accept
+# accept and execute current suggestion
+bindkey '^ ' autosuggest-execute
 
 export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init bash)"
