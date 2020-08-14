@@ -1,4 +1,4 @@
-# linux dotfiles configuration collections
+# linux configuration files
 
 1. shell.conf - contains shell configuration for linux. It works simultaneously with both bash and zsh shell.
 2. starship.toml - contains the starship prompt configurations.
