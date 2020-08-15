@@ -6,3 +6,4 @@
 4. init.vim - neovim configuration for unix like systems.
 5. zshrc - configuration for zsh shell
 6. ibinput-gestures.conf - configuration for multigesture support for mouse support in linux vai xdotool and libinput-tools
+7. alacritty.yml/schemes.yml - alacritty terminal emulator configuration and color schemes
