@@ -66,7 +66,7 @@ let g:solarized_termcolors=256
 
 " gruvbox
 let g:gruvbox_termcolors=256
-colorscheme gruvbox "solarized8 dracula gruvbox
+colorscheme solarized8 "solarized8 dracula gruvbox
 
 
 " Disable arrow_keys
