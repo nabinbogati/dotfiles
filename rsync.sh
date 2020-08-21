@@ -1,11 +1,19 @@
 #!/bin/bash
 
 # sync remote drive to local filesystem
+log_file="$(pwd)/rsync.log"
 
-rclone sync google-drive-dev: ~/GoogleDrive 2>> rsync.log
+rclone -q sync google-drive-dev: ~/GoogleDrive 2>> "$log_file"
 
-if [$? -eq 0 ];then
+line="------------------------------------------------------"
+
+if [ $? -eq 0 ];then
+    echo $line
     echo "Sync Successful"
+    echo $line
 else
-    echo "Sync Failed. see logs for more details."
+    echo $line
+    echo "Sync Failed. See $log_file for more details."
+    echo $line
 fi
+
