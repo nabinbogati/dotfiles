@@ -1,32 +1,26 @@
 set termguicolors
 set clipboard+=unnamedplus
 
-let g:python_host_prog="/home/nb/.virtualenvs/pynvim2/bin/python"
-let g:python3_host_prog="/home/nb/.virtualenvs/pynvim3/bin/python"
+" neovim python bindings
+let g:python_host_prog="~/.virtualenvs/pynvim2/bin/python"
+let g:python3_host_prog="~/.virtualenvs/pynvim3/bin/python"
 
 
-"Plugin call
+" plugin list
 call plug#begin('~/nvim/plugged')
-	Plug 'tpope/vim-fugitive'
-	Plug 'preservim/nerdtree'
-	Plug 'tpope/vim-commentary'
- 	Plug 'ycm-core/YouCompleteMe'
-	Plug 'tpope/vim-obsession'
-   	Plug 'Raimondi/delimitMate'
-   	Plug 'honza/vim-snippets'
-    Plug 'terryma/vim-multiple-cursors'
-	Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'kien/ctrlp.vim'
-	Plug 'vim-syntastic/syntastic'
-   	Plug 'mattn/emmet-vim'
-   	Plug 'Yggdroot/indentLine'
-	Plug 'vim-airline/vim-airline'
-   	Plug 'vim-airline/vim-airline-themes'
-   	Plug 'tpope/vim-surround'
-	Plug 'dracula/vim', { 'name': 'dracula' }
-   	Plug 'ryanoasis/vim-devicons'
+	Plug 'tpope/vim-fugitive'               "  git tools
+	Plug 'tpope/vim-commentary'             "  commenting options
+ 	Plug 'ycm-core/YouCompleteMe'           "  autosuggestion for codes
+	Plug 'preservim/nerdtree'               "  filesystem explorer
+	Plug 'Xuyuanp/nerdtree-git-plugin'      "  git status on filesystem
+	Plug 'kien/ctrlp.vim'                   "  faster file access ctrl+p
+	Plug 'vim-syntastic/syntastic'          "  syntax checker
+   	Plug 'mattn/emmet-vim'                  "  html/css/js rich plugin
+	Plug 'vim-airline/vim-airline'          "  theme for statusline
+   	Plug 'tpope/vim-surround'               "  change sorroundings
+    Plug 'dracula/vim'                      "  dracula theme
+   	Plug 'ryanoasis/vim-devicons'           "  devicons on nerdtree
 call plug#end()
-" Plugin end
 
 
 " you complete me disable preview
@@ -35,48 +29,28 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 0
 autocmd FileType vim let b:vcm_tab_complete = 'vim'
 
-" airline fonts
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='cool'
 
-" remove the filetype part
+" airline statusbar theme, remove statusbar filetype, seperators
+let g:airline_theme='cool'
 let g:airline_section_a=''
-" remove separators for empty sections
 let g:airline_skip_empty_sections = 1
 
 
-" devicons:
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_statusline = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
-
-
-"  themes
+" " themes, custom colors
 syntax enable
 set background=dark
-
-" solarized
-let g:solarized_termcolors=256
-
-" gruvbox
-let g:gruvbox_termcolors=256
-colorscheme solarized8 "solarized8 dracula gruvbox
+colorscheme gruvbox
+let g:gruvbox_contrast_dark='low'
 
 
-" Disable arrow_keys
+
+" disable arrow_keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 
-" vim config
 syntax on                       " show syntax hightlighting
 set encoding=utf-8              " document encoding type
 set nu rnu                      " set line number and relative number is hybrid
@@ -91,28 +65,20 @@ set expandtab                   " tabs are spaces, not tabs
 set tabstop=4                   " an indentation every fourcolumns
 
 
-" NerdTree Ignore Files and Folders
+" enable dev icons, ignore files/folders, open on start, close on exit
+let g:webdevicons_enable = 1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__','.vscode', '_DS_Store']                                      " ignore files and folder in nerd tree
-
-autocmd StdinReadPre * let s:std_in=1 "start nerd-tree on vim startup
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " exit nerd-tree if user exists last vim window
+autocmd StdinReadPre * let s:std_in=1 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 autocmd VimEnter * NERDTree
 
-" autosave on focuslost
-au FocusLost * :wa
 
-" autosave on buffer change
-set autowriteall
-
-
-" 'quote' a word
+" quote words mapping
 nnoremap qw :silent! normal mpea'<Esc>bi'<Esc>`pl
-" double "quote" a word
 nnoremap qd :silent! normal mpea"<Esc>bi"<Esc>`pl
-" remove quotes from a word
 nnoremap wq :silent! normal mpeld bhd `ph<CR>
 
 
-"Emmet mappings
+" emmet mappings for autocomplete with tab
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
