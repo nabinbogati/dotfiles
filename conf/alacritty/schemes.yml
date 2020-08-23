@@ -495,6 +495,39 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
+
+# Colors (Gruvbox dark High)
+colors:
+  # Default colors
+  primary:
+    # hard contrast: background = '#1d2021'
+    background: '#f9f5d7'
+    # soft contrast: background = '#32302f'
+    foreground: '#3c3836'
+
+  # Normal colors
+  normal:
+    black:   '#ebdbb2'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#689d6a'
+
+  # Bright colors
+  bright:
+    black:   '#3c3836'
+    red:     '#3c3836'
+    green:   '#3c3836'
+    yellow:  '#3c3836'
+    blue:    '#3c3836'
+    magenta: '#3c3836'
+    cyan:    '#3c3836'
+    white:   '#3c3836'
+
+
 Hybrid
 
 # Colors (Hybrid)
@@ -1359,6 +1392,49 @@ colors:
     magenta: '#ff6ac1'
     cyan:    '#9aedfe'
     white:   '#f1f1f0'
+
+
+# Solarized Background: dark
+colors:
+    primary:
+        background: '#fdf6e3' 
+        foreground: '#839496'
+    cursor:
+        text: '#fdf6e3' 
+        cursor: '#839496'
+    normal:
+        red:      #dc322f
+        green:    #859900
+        yellow:   #b58900
+        blue:     #268bd2
+        magenta:  #d33682
+        cyan:     #2aa198
+        back:     #002b36
+        orange:   #cb4b16
+        violet:   #6c71c4
+
+# Solarized Background: light
+colors:
+    primary:
+        background: '#fdf6e3' 
+        foreground: '#657b83'
+    cursor:
+        text: '#fdf6e3' 
+        cursor: '#657b83'
+    normal:
+        red:      #dc322f
+        green:    #859900
+        yellow:   #b58900
+        blue:     #268bd2
+        magenta:  #d33682
+        cyan:     #2aa198
+        orange:   #cb4b16
+        violet:   #6c71c4
+        back:     #fdf6e3
+
+
+
+
 
 Solarized
 
