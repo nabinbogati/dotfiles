@@ -40,7 +40,7 @@ let g:airline_skip_empty_sections = 1
 syntax enable
 set background=dark
 colorscheme gruvbox
-let g:gruvbox_contrast_dark='low'
+"let g:gruvbox_contrast_dark='low'
 
 
 
@@ -59,11 +59,12 @@ set showmode                    " Display the current mode
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide the mouse cursor while typing
 set spell                       " Spell checking on
+set list                        " shows whitespaces characters 
 set showmatch                   " Show matching brackets/parenthesis
 set shiftwidth=4                " use indents of 4 spaces
 set expandtab                   " tabs are spaces, not tabs
 set tabstop=4                   " an indentation every fourcolumns
-
+set cursorline                  " hightlight line with cursor
 
 " enable dev icons, ignore files/folders, open on start, close on exit
 let g:webdevicons_enable = 1
@@ -82,3 +83,9 @@ nnoremap wq :silent! normal mpeld bhd `ph<CR>
 " emmet mappings for autocomplete with tab
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" set background
+hi Normal guibg=None ctermbg=None
+
+" map escape to
+:imap jj <Esc>
