@@ -1,0 +1,10 @@
+#minute #hour #day_of_month #month #day_of_week
+
+# backup local file to google drive every-hour.
+0    */1    *    *    *    sh ~/dotfiles/rsync.sh 2>>/var/log/rsync.log
+
+# backup local file to google drive every-hour at minute 5.
+0    */1    *    *    *    sh ~/dotfiles/rbackup.sh 2>>/var/log/rbackup.log
+
+# test if cronjob is working as expected.
+0    */1    *    *    *    echo $(date) >> ~/Desktop/cron.txt
