@@ -23,7 +23,7 @@ scrolling:
 
 
 # Background Transparency Start
-background_opacity: 1
+background_opacity: .9
 
 
 #:Font Configuration Start
