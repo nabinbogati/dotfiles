@@ -17,12 +17,12 @@ call plug#begin('~/nvim/plugged')
     Plug 'ryanoasis/vim-devicons'           "  devicons on nerdtree
     Plug 'junegunn/fzf.vim'                 "  fuzzy finder
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'terryma/vim-multiple-cursors'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " airline statusbar theme
 let g:airline_theme='cool'
-let g:airline_section_a=''
+let g:airline_section_a='%{coc#status()}'
 
 " show syntax hightlighting
 syntax enable
@@ -56,24 +56,8 @@ nmap <Leader>b :Buffers<cr>
 nmap <Leader>h :History<cr>
 nmap <Leader>r :registers<cr>
 
-" multi-cursors
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-let g:multi_cursor_start_word_key        = '<C-n>'
-let g:multi_cursor_select_all_word_key   = '<A-n>'
-let g:multi_cursor_start_key             = 'g<C-n>'
-let g:multi_cursor_select_all_key        = 'g<A-n>'
-let g:multi_cursor_next_key              = '<C-n>'
-let g:multi_cursor_prev_key              = '<C-m>'
-let g:multi_cursor_skip_key              = '<C-x>'
-let g:multi_cursor_quit_key              = '<Esc>'
-let g:multi_cursor_exit_from_visual_mode = 1
-let g:multi_cursor_exit_from_insert_mode = 1
-
 " automatically write file while changing buffer
 set autowriteall
-
 
 set nu rnu                      " set line number and relative number is hybrid
 set mouse=a                     " Hide the mouse cursor while typing
@@ -84,9 +68,18 @@ set tabstop=4                   " an indentation every fourcolumns
 set cursorline                  " hightlight line with cursor
 
 " nerdtree open on start, close on exit 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) |q| endif
 autocmd VimEnter * NERDTree
 nmap <Leader>ts :NERDTreeToggle<cr>
 
 " set background transparency
 hi Normal ctermbg=None guibg=None
+
+" coc.vim
+so ~/.config/nvim/coc.vim
+
+"source on save
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost ~/.config/nvim/init.vim source %
+augroup END
