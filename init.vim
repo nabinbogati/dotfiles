@@ -22,7 +22,7 @@ call plug#end()
 
 " airline statusbar theme
 let g:airline_theme='cool'
-let g:airline_section_a='%{coc#status()}'
+let g:airline_section_a=''
 
 " show syntax hightlighting
 syntax enable
@@ -32,6 +32,10 @@ colorscheme gruvbox
 
 " left padding
 set foldcolumn=1
+
+" resize splits
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " disable arrow_keys
 noremap <Up> <Nop>
@@ -66,10 +70,11 @@ set shiftwidth=4                " use indents of 4 spaces
 set expandtab                   " tabs are spaces, not tabs
 set tabstop=4                   " an indentation every fourcolumns
 set cursorline                  " hightlight line with cursor
+" set hidden                      " hide buffers in a window
 
 " nerdtree open on start, close on exit 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) |q| endif
 autocmd VimEnter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nmap <Leader>ts :NERDTreeToggle<cr>
 
 " set background transparency
