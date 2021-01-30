@@ -60,7 +60,7 @@ alias pv='echo -n "which python      : " && which python
 
 alias vim=nvim
 alias vi=nvim
-
+alias pbcopy="xclip -sel clip"
 alias gote="cd /media/nb/Projects"
 
 export EDITOR=vi
