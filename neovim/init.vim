@@ -20,6 +20,11 @@ inoremap <silent><expr> <S-TAB>
 source ~/.config/nvim/plugins.vim
 
 """ color scheme
+let g:gruvbox_italic=1
+let g:gruvbox_bold=1
+let g:gruvbox_italicize_strings=1
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
 """ show syntax hightlighting
@@ -31,9 +36,14 @@ set nu
 """ Let mouse-drag select only text not line numbers
 set mouse+=a
 
+""" Set tabsize to 4 spaces
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-""" reload file if changed from elsewhere (TODO test if working)
+""" Reload file if changed from elsewhere (TODO test if working)
 set autoread
+
+""" Hightlighting current line
+set cursorline
 
 
 """ Preserves undo history upon writing and changing buffer.
