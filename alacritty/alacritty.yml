@@ -108,24 +108,28 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "FantasqueSansMono Nerd Font"
+    family: "FantasqueSansMono Nerd Font Mono"
+    style: Regular
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: "FantasqueSansMono Nerd Font Mono"
+    style: Bold
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
-  #italic:
+  italic:
+    family: "FantasqueSansMono Nerd Font Mono"
+    style: Italic
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
@@ -353,7 +357,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: .95
+background_opacity: 1
 
 #selection:
   # This string contains all characters that are used as separators for
