@@ -45,7 +45,7 @@ bindkey "^N" down-line-or-search
 # bindkey '^[[B' history-substring-search-down
 
 alias vi='nvim'
-
+alias pbcopy="xclip -sel clip"
 alias g='git'
 
 alias rg.='rg --hidden'
@@ -60,7 +60,7 @@ alias pv='echo -n "which python      : " && which python
 
 alias vim=nvim
 alias vi=nvim
-alias pbcopy="xclip -sel clip"
+
 alias gote="cd /media/nb/Projects"
 
 export EDITOR=vi
@@ -75,6 +75,19 @@ eval "$(pyenv init -)"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 pyenv virtualenvwrapper_lazy
 
+# flutter sdk path
+export PATH="$PATH:$HOME/flutter/bin"
+
+# cmdline tools path
+export PATH="$PATH:$HOME/Android/Sdk/cmdline-tools"
+export PATH="$PATH:$HOME/Android/Sdk/cmdline-tools/tools/bin"
+
+# android configurations
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 ### FZF and Z
 #like normal z when used with arguments but displays an fzf prompt when used without.
