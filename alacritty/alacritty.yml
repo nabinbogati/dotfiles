@@ -437,7 +437,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: .98
+background_opacity: .95
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -761,33 +761,33 @@ shell:
 key_bindings:
   # Also add C-Tab to switch sessions as in browsers
   # Command ` to change session on tmux. Sends chars C-b\)
-  - { key: Grave,        mods: Command,       chars: "\x13" }
+  - { key: Grave,        mods: Control,       chars: "\x13" }
 
   # Save in vim. Send C-s which is mapped to :w in vim
-  - { key: S,        mods: Command,       chars: "\x13" }
+  - { key: S,        mods: Control,       chars: "\x13" }
 
   # Close tmux pane. Send C-d.
-  - { key: W,        mods: Command,       chars: "\x04" }
+  - { key: W,        mods: Control,       chars: "\x04" }
 
   # New tab in tmux. Send C-b + c
-  - { key: T,        mods: Command,       chars: "\x02\x63" }
+  - { key: T,        mods: Control,       chars: "\x02\x63" }
 
   # Focus one tab right. Send C-b + n
-  - { key: RBracket, mods: Command|Shift, chars: "\x02\x6e" }
+  - { key: RBracket, mods: Control|Shift, chars: "\x02\x6e" }
 
   # Focus one tab left. Send -C-b + p
-  - { key: LBracket, mods: Command|Shift, chars: "\x02\x70" }
+  - { key: LBracket, mods: Control|Shift, chars: "\x02\x70" }
 
   # Move to tab x. Send C-b + [1-9]
-  - { key: Key1,     mods: Command,       chars: "\x02\x31" }
-  - { key: Key2,     mods: Command,       chars: "\x02\x32" }
-  - { key: Key3,     mods: Command,       chars: "\x02\x33" }
-  - { key: Key4,     mods: Command,       chars: "\x02\x34" }
-  - { key: Key5,     mods: Command,       chars: "\x02\x35" }
-  - { key: Key6,     mods: Command,       chars: "\x02\x36" }
-  - { key: Key7,     mods: Command,       chars: "\x02\x37" }
-  - { key: Key8,     mods: Command,       chars: "\x02\x38" }
-  - { key: Key9,     mods: Command,       chars: "\x02\x39" }
+  - { key: Key1,     mods: Alt,       chars: "\x02\x31" }
+  - { key: Key2,     mods: Alt,       chars: "\x02\x32" }
+  - { key: Key3,     mods: Alt,       chars: "\x02\x33" }
+  - { key: Key4,     mods: Alt,       chars: "\x02\x34" }
+  - { key: Key5,     mods: Alt,       chars: "\x02\x35" }
+  - { key: Key6,     mods: Alt,       chars: "\x02\x36" }
+  - { key: Key7,     mods: Alt,       chars: "\x02\x37" }
+  - { key: Key8,     mods: Alt,       chars: "\x02\x38" }
+  - { key: Key9,     mods: Alt,       chars: "\x02\x39" }
 
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
