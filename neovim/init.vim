@@ -1,8 +1,11 @@
+"Change vim register to system clipboard
+set clipboard=unnamedplus
+
 "scroll deoplete completion suggestion words
 let g:deoplete#enable_at_startup = 1
 let g:jedi#completions_enabled = 0
 let g:python3_host_prog = '~/.pyenv/versions/3.9.1/bin/python'
-let g:python2_host_prog = '~/.pyenv/versions/2.1.18/bin/python'
+let g:python2_host_prog = '~/.pyenv/versions/2.7.18/bin/python2.7'
 
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 inoremap <silent><expr> <TAB>
@@ -19,16 +22,22 @@ inoremap <silent><expr> <S-TAB>
 
 source ~/.config/nvim/plugins.vim
 
+""" show syntax hightlighting
+syntax enable
+
+
 """ color scheme
 let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_italicize_comments=1
 let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+let g:gruvbox_contrast_light="hard"
+set background=dark
 
-""" show syntax hightlighting
-syntax enable
+" colorscheme gruvbox
+colorscheme solarized
+
 
 """ Show line numbers
 set nu
@@ -86,7 +95,7 @@ nnoremap <leader>RR :source $MYVIMRC<cr>
 
 
 """ Open ranger with ;r
-nnoremap <leader>r :Ranger<cr>
+nnoremap <leader>e :Ranger<cr>
 
 """ Buffer search with ;b
 nnoremap <leader>b :Buffers<cr>
