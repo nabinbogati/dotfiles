@@ -14,6 +14,7 @@ plugins=(
 		zsh-autosuggestions
 		zsh-syntax-highlighting
 		history-substring-search
+		zsh-completions
 		z
 	)
 
@@ -61,26 +62,31 @@ alias pv='echo -n "which python      : " && which python
 alias vim=nvim
 alias vi=nvim
 
-alias gote="cd /media/nb/Projects"
+alias god="cd /media/nb/MyFiles/Projects"
 
 export EDITOR=vi
 
 # pyenv setups
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3.9"
 source "$HOME/.local/bin/virtualenvwrapper.sh"
 
+#PUT THIS IN .zprofile file
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 pyenv virtualenvwrapper_lazy
 
 # flutter sdk path
-export PATH="$PATH:$HOME/flutter/bin"
+#export PATH="$PATH:$HOME/flutter/bin"
 
 # cmdline tools path
-export PATH="$PATH:$HOME/Android/Sdk/cmdline-tools"
-export PATH="$PATH:$HOME/Android/Sdk/cmdline-tools/tools/bin"
+export PATH="$PATH:$HOME/Android/Sdk/cmdline-tools/tools"
+export PATH="$PATH:$HOME/Android/Sdk/cmdline-tools/tools/bin/"
 
 # android configurations
 export ANDROID_HOME="$HOME/Android/Sdk"
@@ -97,13 +103,6 @@ zf() {
     cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
 
-export FZF_DEFAULT_COMMAND="fd
-			    --type file             \
-			    --follow                \
-			    --hidden                \
-			    --exclude .git"
-
-
 export FZF_DEFAULT_OPTS="
 			--layout=reverse
 			--info=inline
@@ -115,57 +114,9 @@ export FZF_DEFAULT_OPTS="
 			--bind 'ctrl-y:execute-silent(echo {+} | xclip -sel clip)'
 			--bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 			--bind 'ctrl-v:execute(code {+})'"
-
+                        #
 # Git diff with fzf
 fd() {
- preview="git diff $@ --color=always -- {-1}"
- git diff $@ --name-only | fzf -m --ansi --preview $preview
+    preview="git diff $@ --color=always -- {-1}"
+    git diff $@ --name-only | fzf -m --ansi --preview $preview
 }
-
-### Auto run `workon` when there's a .workon file in current or any parent dirs
-#   And deactivates when there's no .workon file in current or all parent dirs
-function cd() {
-	builtin cd "$@" || return
-
-	# save pwd because we need it later below
-	pwd="$(pwd)"
-	workon_file_check_at="$pwd"
-
-	# echo $workon_file_check_at
-
-	check_upto="/"
-	current_virtualenv=$(basename "$VIRTUAL_ENV")
-
-	while [[ $workon_file_check_at != $check_upto ]] ; do
-
-		# echo "checking at $workon_file_check_at"
-
-		workon_file=$workon_file_check_at/.workon
-
-		if [[ -f $workon_file ]] ; then
-			workon_project=$(cat $workon_file)
-
-			if [[ $workon_project == $current_virtualenv ]] ; then
-				# echo "already working on $workon_project"
-				return
-			fi
-
-			echo "workon $workon_project (set by $workon_file)"
-			workon $workon_project
-
-			# workon changes the dir to one set by setvirtualenvproject
-			# so go again to the previously saved pwd
-			builtin cd $pwd
-			return
-		fi
-
-		workon_file_check_at=$(dirname $workon_file_check_at)
-	done
-
-	# No .workon file found at any of the ancestors, deactivates if working on
-	if [[ "$VIRTUAL_ENV" ]] ; then
-		echo "deactivating $current_virtualenv"
-		deactivate
-	fi
-}
-cd . >/dev/null
