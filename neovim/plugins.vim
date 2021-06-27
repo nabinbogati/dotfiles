@@ -11,6 +11,9 @@ Plug 'tpope/vim-commentary'
 """ gruvbox theme
 Plug 'morhetz/gruvbox'
 
+""" solarized theme
+Plug 'altercation/vim-colors-solarized'
+
 """ Easy navigation to tmux pane with C-[hjkl]
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -19,6 +22,12 @@ Plug 'junegunn/goyo.vim'
 
 """ Smooth scrolling
 Plug 'psliwka/vim-smoothie'
+
+""" Emmet for vim
+Plug 'mattn/emmet-vim'
+
+""" Autocomplete Engine
+Plug 'ycm-core/YouCompleteMe'
 
 """ Makes git command available from vim console
 Plug 'https://tpope.io/vim/fugitive.git'
