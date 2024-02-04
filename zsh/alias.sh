@@ -11,3 +11,6 @@ alias vim=nvim
 
 # fdfind 
 alias fd=fdfind
+
+# git
+g="git"
