@@ -45,10 +45,3 @@ require("lazy").setup({
     },
   },
 })
-
-
--- set catppuccin as colorscheme
-vim.cmd([[ colorscheme catppuccin-mocha ]])
-
--- keymappings for telescope file_browser
-vim.api.nvim_set_keymap("n", "<leader>r", ":Telescope file_browser<CR>", { noremap = true })
