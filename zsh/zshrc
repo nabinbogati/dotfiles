@@ -53,14 +53,18 @@ alias l='exa -F --icons'
 alias tree='exa -T --icons'
 
 # nvim alias
-alias vi=nvim
-alias vim=nvim
+alias vi=~/.local/bin/nvim
+alias vim=~/.local/bin/nvim
+alias nvim=~/.local/bin/nvim
 
 # fdfind 
 alias fd=fdfind
 
 # git 
 alias g="git"
+
+# batcat
+alias bat="batcat"
 
 # pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
@@ -102,7 +106,11 @@ export FZF_DEFAULT_OPTS="
 			--info=inline
 			--height=100%
 			--multi
-			--preview '([[ -f {} ]] && (bat -n --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+      --color="preview-bg:#223344,border:#778899"
+      --color="bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39"
+      --color="fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78"
+      --color="marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
+			--preview '([[ -f {} ]] && (batcat -n --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 			--bind '?:toggle-preview'
 			--bind 'ctrl-a:select-all'
 			--bind 'ctrl-y:execute-silent(echo {+} | xclip -sel clip)'
@@ -112,7 +120,6 @@ export FZF_DEFAULT_OPTS="
       # FZF [ https://github.com/catppuccin/fzf ]
       # Latte
         # --color="preview-bg:#223344,border:#778899" # darker preview for latte
-        # --color="preview-bg:#223344,border:#778899"
         # --color="bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39"
         # --color="fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78"
         # --color="marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
@@ -135,6 +142,26 @@ bindkey "^N" down-line-or-search
 # UP or DOWN searches typed command in any part of history commands.
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+_dark () {
+  # sed -i '' 's/latte/mocha/' ~/.config/alacritty/alacritty.toml
+  sed -i 's/latte/mocha/' ~/dotfiles/tmux/tmux.conf
+  sed -i 's/latte/mocha/' ~/dotfiles/nvim/lua/plugins/catppuccin.lua
+
+  # reload tmux
+  tmux source-file ~/.tmux.conf
+}
+
+
+# set light working env
+_light () {
+  # sed -i '' 's/mocha/latte/' ~/.config/alacritty/alacritty.toml
+  sed -i 's/mocha/latte/' ~/dotfiles/tmux/tmux.conf
+  sed -i 's/mocha/latte/' ~/dotfiles/nvim/lua/plugins/catppuccin.lua
+
+  # reload tmux
+  tmux source-file ~/.tmux.conf
+}
 
 
 export PATH="$PATH:~/.local/bin"

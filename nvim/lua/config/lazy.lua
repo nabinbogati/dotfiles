@@ -45,3 +45,16 @@ require("lazy").setup({
     },
   },
 })
+
+-- linters and formatters configurations
+require("lint").linters_by_ft = {
+  markdown = { "vale" },
+  python = { "flake8" },
+}
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    python = { "isort", "black" },
+  },
+})
