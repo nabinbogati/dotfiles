@@ -1,0 +1,33 @@
+# themes configurations
+import = [
+  # "themes/catppuccin-latte.toml"
+  # "themes/catppuccin-frappe.toml"
+  # "themes/catppuccin-macchiato.toml"
+  "themes/catppuccin-mocha.toml"
+]
+
+[shell]
+program = "ssh server"
+# args    = ["tree"]
+
+[env]
+TERM = "tmux-256color"
+
+[font]
+normal      = { family = "JetBrainsMono Nerd Font"}
+italic      = { family = "JetBrainsMono Nerd Font"}
+bold        = { family = "JetBrainsMono Nerd Font"}
+bold_italic = { family = "JetBrainsMono Nerd Font"}
+size        = 12
+
+[window]
+decorations  = "None"
+startup_mode = "Maximized"
+blur         = true
+opacity      = 1
+
+[keyboard]
+bindings = [
+{ key = "[", mods = "Control", action = "ToggleViMode" },
+]
+
