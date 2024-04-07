@@ -81,3 +81,5 @@ bindkey "^N" down-line-or-search
 # UP or DOWN searches typed command in any part of history commands.
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+export PATH="$PATH:~/.local/bin/"

@@ -11,6 +11,7 @@ basic-setup:
 	sudo apt install fd-find -y
 	sudo apt install fzf -y
 	sudo apt install ripgrep -y
+	sudo apt install unzip -y
 
 zsh-setup: zsh-shell zsh-plugin-manager
 
@@ -29,7 +30,7 @@ tmux-setup: tmux-plugin-manager
 tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # install tpm
 
-neovim-setup: install-neovim install-nvchad
+neovim-setup: install-neovim install-lazynvim
 
 install-neovim:
 	wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -O /tmp/nvim.tar.gz
@@ -39,6 +40,9 @@ install-neovim:
 
 install-nvchad:
 	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+install-lazynvim:
+	git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 setup-pyenv:
 	bash zsh/pyenv.sh
