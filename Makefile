@@ -1,5 +1,8 @@
 target:
 	make basic-setup
+	make zsh-setup
+	make tmux-setup
+	make neovim-setup
 
 basic-setup:
 	# setup dev env to compile pyenv
@@ -7,7 +10,7 @@ basic-setup:
 	
 	# install pip for python3
 	sudo apt-get install python3-pip -y
-	sudo apt install zoxide exa -y # for jump around and colordirs
+	sudo apt install zoxide eza -y # for jump around and colordirs
 	sudo apt install fd-find -y
 	sudo apt install fzf -y
 	sudo apt install ripgrep -y
@@ -23,6 +26,7 @@ zsh-shell:
 zsh-plugin-manager:
 	git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote # install antidote plugin manager
 	ln -sf $(PWD)/zsh/zsh_plugins.txt ~/.zsh_plugins.txt
+	ln -sf $(PWD)/zsh/p10k.zsh ~/.p10k.zsh
 
 tmux-setup: tmux-plugin-manager
 	ln -sf $(PWD)/tmux/tmux.conf ~/.tmux.conf
@@ -33,13 +37,11 @@ tmux-plugin-manager:
 neovim-setup: install-neovim install-lazynvim
 
 install-neovim:
-	wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -O /tmp/nvim.tar.gz
-	tar xzvf /tmp/nvim.tar.gz --directory /tmp/
-	mv /tmp/nvim-linux64 ~/.nvim
-	ln -sf ~/.nvim/bin/nvim ~/.local/bin/nvim
-
-install-nvchad:
-	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+	# wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -O /tmp/nvim.tar.gz
+	# tar xzvf /tmp/nvim.tar.gz --directory /tmp/
+	# mv /tmp/nvim-linux64 ~/.nvim
+	# ln -sf ~/.nvim/bin/nvim ~/.local/bin/nvim
+	sudo apt install neovim -y
 
 install-lazynvim:
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
@@ -99,4 +101,4 @@ clean-tmux:
 	rm -rf ~/.tmux.conf
 
 clean-tools:
-	sudo apt remove exa zoxide
+	sudo apt remove eza zoxide
