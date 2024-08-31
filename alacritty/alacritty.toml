@@ -1,24 +1,24 @@
 # themes configurations
 import = [
-  # "themes/catppuccin-latte.toml"
-  # "themes/catppuccin-frappe.toml"
-  # "themes/catppuccin-macchiato.toml"
-  "themes/catppuccin-mocha.toml"
+  # "themes/catppuccin-latte.toml",
+  # "themes/catppuccin-frappe.toml",
+  # "themes/catppuccin-macchiato.toml",
+  "~/.config/alacritty/themes/catppuccin-mocha.toml"
 ]
 
 [shell]
-program = "ssh server"
-# args    = ["tree"]
+program = "zsh"
+# args    = ["-c", "tmux attach || tmux new -s default"]
 
 [env]
 TERM = "tmux-256color"
 
 [font]
-normal      = { family = "JetBrainsMono Nerd Font"}
-italic      = { family = "JetBrainsMono Nerd Font"}
-bold        = { family = "JetBrainsMono Nerd Font"}
-bold_italic = { family = "JetBrainsMono Nerd Font"}
-size        = 12
+normal      = { family = "JetBrainsMono Nerd Font Mono"}
+italic      = { family = "JetBrainsMono Nerd Font Mono"}
+bold        = { family = "JetBrainsMono Nerd Font Mono"}
+bold_italic = { family = "JetBrainsMono Nerd Font Mono"}
+size        = 10
 
 [window]
 decorations  = "None"

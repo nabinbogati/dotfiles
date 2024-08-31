@@ -15,6 +15,7 @@ basic-setup:
 	sudo apt install fzf -y
 	sudo apt install ripgrep -y
 	sudo apt install unzip -y
+	sudo apt install tmux git, tig -y
 
 zsh-setup: zsh-shell zsh-plugin-manager
 
@@ -46,6 +47,10 @@ install-neovim:
 install-lazynvim:
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
 
+setup-alacritty:
+	sudo apt install alacritty -y
+	ln -sf $(PWD)/alacritty/ ~/.config/
+
 setup-pyenv:
 	bash zsh/pyenv.sh
 
@@ -58,6 +63,19 @@ setup-git:
 
 	### configure git
 	make gitconfig
+
+setup-android:
+	# install java
+	# sudo apt install openjdk-17-jdk -y
+	
+	# install command-line tools
+	# wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O ~/Downloads/cmdlinetools.zip
+	# unzip -q ~/Downloads/cmdlinetools.zip -d ~/Downloads
+
+	mkdir -p ~/Android/Sdk/cmdline-tools/latest
+
+	mv ~/Downloads/cmdline-tools/* ~/Android/Sdk/cmdline-tools/latest
+
 
 gitconfig:
 	### git aliases
