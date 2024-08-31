@@ -17,7 +17,7 @@ echo 'export PATH="~/.local/bin:$PATH"' >> ~/.zshrc
 echo 'pyenv virtualenvwrapper_lazy' >> ~/.zshrc
 
 ### Install python
-[[ -d ~/.pyenv/versions/3.10.2 ]] || pyenv install 3.10.2
+[[ -d ~/.pyenv/versions/3.10.2 ]] || ~/.pyenv/bin/pyenv install 3.10.2
 pyenv global 3.10.2
 
 # install virtualenvwrapper from pip
