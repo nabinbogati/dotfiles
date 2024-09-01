@@ -7,8 +7,8 @@ import = [
 ]
 
 [shell]
-program = "zsh"
-# args    = ["-c", "tmux attach || tmux new -s default"]
+program = "/usr/bin/zsh"
+args    = ["-c", "tmux attach || tmux new -s default"]
 
 [env]
 TERM = "tmux-256color"
