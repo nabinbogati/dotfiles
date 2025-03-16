@@ -184,3 +184,8 @@ fi
 
 # disable bytecode generation
 export PYTHONDONTWRITEBYTECODE=true
+
+# cheat.sh config
+cheat () {
+  curl cheat.sh/$1
+}
