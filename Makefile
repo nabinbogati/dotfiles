@@ -6,8 +6,8 @@ target:
 
 basic-setup:
 	# setup dev env to compile pyenv
-	sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev -y	
-	
+	sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev -y
+
 	# install pip for python3
 	sudo apt-get install python3-pip -y
 	sudo apt install zoxide eza -y # for jump around and colordirs
@@ -15,7 +15,8 @@ basic-setup:
 	sudo apt install fzf -y
 	sudo apt install ripgrep -y
 	sudo apt install unzip -y
-	sudo apt install tmux git, tig -y
+	sudo apt install tmux git tig -y
+	sudo apt install tldr
 
 zsh-setup: zsh-shell zsh-plugin-manager
 
@@ -38,11 +39,12 @@ tmux-plugin-manager:
 neovim-setup: install-neovim install-lazynvim
 
 install-neovim:
-	# wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz -O /tmp/nvim.tar.gz
-	# tar xzvf /tmp/nvim.tar.gz --directory /tmp/
-	# mv /tmp/nvim-linux64 ~/.nvim
-	# ln -sf ~/.nvim/bin/nvim ~/.local/bin/nvim
-	sudo apt install neovim -y
+	#fetch the latest available neovim
+	wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz -O /tmp/nvim.tar.gz
+
+	tar xzvf /tmp/nvim.tar.gz --directory /tmp/
+	mv /tmp/nvim-linux-x86_64 ~/.nvim
+	ln -sf ~/.nvim/bin/nvim ~/.local/bin/nvim
 
 install-lazynvim:
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
@@ -67,7 +69,7 @@ setup-git:
 setup-android:
 	# install java
 	# sudo apt install openjdk-17-jdk -y
-	
+
 	# install command-line tools
 	# wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O ~/Downloads/cmdlinetools.zip
 	# unzip -q ~/Downloads/cmdlinetools.zip -d ~/Downloads
