@@ -69,13 +69,6 @@ alias g="git"
 # batcat
 alias bat="batcat"
 
-# pyenv settings
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENT="true"
-pyenv virtualenvwrapper_lazy
-
 # details about current python env
 alias pv='echo -n "which python      : " && which python
           echo -n "python --version  : " && python --version
@@ -83,25 +76,6 @@ alias pv='echo -n "which python      : " && which python
           echo -n "pip --version     : " && pip --version
           echo -n "which ipython     : " && which ipython
           echo -n "ipython --version : " && ipython --version'
-
-# `vip os` will open python os module with vi
-function vip() {
-	module="$1"
-	if [[ "$module" ]] ; then
-		module_path=$(python -c"import $module; print($module.__file__)" 2>/dev/null)
-		if [[ -f "$module_path" ]] ; then
-			echo vi $module_path
-			vi "$module_path"
-		else
-                        VENV=$(basename "$VIRTUAL_ENV")
-			if [[ "$VENV" ]] ; then
-			else
-				VENV=$(pyenv version)
-			fi
-			echo \"$module\" not found in \"$VENV\"
-		fi
-	fi
-}
 
 export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS="
