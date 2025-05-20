@@ -1,45 +1,56 @@
-# Dotfiles 
-[![Project Status](https://img.shields.io/badge/status-active-success.svg)]()
- [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
- ****This project aims to bundle all my needs for managing dotfiles of vairous tools required for development. The purpose of maintaining this repository is to use a set of config files to manage the behaviour of the tools that I use on day to day basis like zsh, neovim, and tmux. It also provides an easy way to install all those tools and it's configurations using a Makefile. So that after switching to a new system it's easir to setup my previous development setup.****
-### Tools
-1. zsh
-    - Prompt  `[powerlevel10k]`
-    - Plugin Manager  `[antidote]`
-    - Plugins
-    	1. zsh-users/zsh-syntax-hightlighting
-    	2. zsh-users/zsh-autosuggestions
-    	3. zsh-users/zsh-completions
-    	4. zsh-users/zsh-history-substring-search
-        5. romkatv/powerlevel10k
-    - Extras
-    	1. exa
-        2. zoxide
-2. tmux
-    - Plugin Manager -> `[TPM]`
-    - Plugins
-        1. tmux-plugins/tpm'  `plugin manager`
-        2. catppuccin/tmux'  `default theme`
-        3. tmux-plugins/tmux-sensible' `basic settings like scape-time, history-limit, status -interval etc`
-        4. tmux-plugins/tmux-yank' `copy to system clippboard`
-        5. tmux-plugins/tmux-resurrect' `restore env after system restart`
-        6. tmux-plugins/tmux-continuum' `automatic save env on specified intervals`
-        7. tmux-plugins/tmux-pain-control' `vim like pane control`
-        8. tmux-plugins/tmux-sessionist' `easier way to manage sessions`
-3. neovim
-    - NvChad
+# Dotfiles
 
-### Installation
-```
-Requirements:
-1. make
-2. git
-```
-```
-Install Using make
-$ make all
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+A collection of my development environment configurations for terminal, editor, and other essential tools.
+
+## ✨ Features
+
+### 🖥 Zsh
+- **Prompt:** Powerlevel10k
+- **Plugin Manager:** Antidote
+- **Plugins:**
+  - `zsh-users/zsh-syntax-highlighting`
+  - `zsh-users/zsh-autosuggestions`
+  - `zsh-users/zsh-completions`
+  - `zsh-users/zsh-history-substring-search`
+  - `romkatv/powerlevel10k`
+- **Extras:**
+  - `exa` (improved ls alternative)
+  - `zoxide` (fast directory navigation)
+
+### 🔀 Tmux
+- **Plugin Manager:** TPM
+- **Plugins:**
+  - `tmux-plugins/tpm` (plugin manager)
+  - `catppuccin/tmux` (default theme)
+  - `tmux-plugins/tmux-sensible` (optimized settings)
+  - `tmux-plugins/tmux-yank` (copy to system clipboard)
+  - `tmux-plugins/tmux-resurrect` (restore environment after restart)
+  - `tmux-plugins/tmux-continuum` (automatic save & restore sessions)
+  - `tmux-plugins/tmux-pain-control` (vim-like pane control)
+  - `tmux-plugins/tmux-sessionist` (better session management)
+
+### 📝 Neovim
+- **Config:** Lazy.vim
+
+## ⚙️ Installation
+
+### 📌 Requirements
+
+- `make`
+- `git`
+
+### 📦 Install Using Makefile
+
+```bash
+make all
 ```
 
-### Contact
-- nabin31bogati@gmail.com
-- https://linktr.ee/nabinbogati
+## Feedback
+
+If you have any feedback, please reach out to me at nabin31bogati@gmail.com
+
+
+## 🚀 About Me
+Software developer from Nepal with a focus on building innovative, efficient and scalable solutions.
