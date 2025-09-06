@@ -1,0 +1,83 @@
+
+* {
+  font-family: "JetBrainsMonoNerdFontMono";
+  font-weight: bold;
+  font-size: 13px;
+  color: #dcdfe1;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+}
+
+#mpris,
+#privacy,
+#workspaces,
+#network,
+#window,
+#custom-updates,
+#tray{
+  background-color: rgba(15,27,53,0.9);
+  padding: 4px 6px; 
+  margin-top: 6px; 
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+
+#memory,
+#temperature,
+#cpu,
+#custom-nvidia,
+#clock,
+#power-profiles-daemon,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery{
+  background-color: rgba(15,27,53,0.9);
+  margin-top: 6px; 
+  padding: 4px 4px; 
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+#pulseaudio.muted {
+  color: #FF0000; 
+}
+
+#bluetooth:hover,
+#network:hover,
+#backlight:hover,
+#battery:hover,
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#clock:hover,
+#window:hover {
+  background-color: rgba(70, 75, 90, 0.9);
+}
+#window {
+}
+#workspaces button:hover{
+  background-color: rgba(97, 175, 239, 0.2);
+  margin: 0 2px;
+  border-radius: 12px;
+}
+#workspaces button.active {
+  background-color: #61afef;   color: #ffffff;
+  padding: 2px 4px;
+  margin: 0 2px;
+  border-radius: 12px;
+}
+#workspaces button{
+  min-width: 20px;
+  background: transparent;
+  border: 1px;
+  color: #888888;
+  padding: 0px 0px;
+  font-weight: bold;
+}

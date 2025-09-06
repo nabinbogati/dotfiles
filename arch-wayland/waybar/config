@@ -1,0 +1,186 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 8,
+  "spacing": 0,
+  "modules-left": [
+    "niri/workspaces",
+    "custom/updates",
+    "niri/window"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "memory", 
+    "cpu",
+    "network",
+    "custom/nvidia"
+  ],
+  "niri/workspaces": {
+    "disable-scroll": false,
+    "format": "{icon}",
+    "on-click": "activate"
+    },
+    "format-icons": {
+      "3": "3",
+      "2": "2",
+      "1": "1",     
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",      
+      "default": ""
+    },
+  "niri/window": {
+    "icon": true,
+    "max-length": 25
+  },
+  "systemd-failed-units": {
+	"hide-on-ok": false, // Do not hide if there is zero failed units.
+	"format": "✗ {nr_failed}",
+	"format-ok": "✓",
+	"system": true, // Monitor failed systemwide units.
+	"user": false // Ignore failed user units.
+  },
+  "power-profiles-daemon": {
+  "format": "{profile}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true
+  },
+  
+  "network": {
+    //"format-wifi": "<span color='#00FFFF'>󰤨 </span>{essid}",
+    "format-wifi": "<span color='#00FFFF'>󰤨 </span>{signalStrength}%<span color='#FF1493'>󰅧 </span>{bandwidthUpBytes}<span color='#00BFFF'>󰅢 </span>{bandwidthDownBytes}",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "tooltip-format": "{ipaddr} : {frequency}GHz {signalStrength}% ",
+    "format-linked": "<span color='#FFA500'>󱘖 </span>{ifname} (No IP) ",
+    "format-disconnected": "<span color='#FF4040'> </span>",
+    "interval": 3
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span color='#28CD41'>{icon}</span>{capacity}%",
+    "format-charging": "󱐋{capacity}%",
+	  "interval": 1,
+    "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    "tooltip": true
+  },
+  "pulseaudio": {
+  "format": "{volume}% {icon}",
+  "format-source-muted": "",
+  "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+  },
+  "on-click": "pavucontrol"
+  },
+  
+  "memory": {
+    "format": "<span color='#8A2BE2'> </span>{used:0.1f}G ",
+    "tooltip": true,
+    "tooltip-format": "{used:0.2f}G/{total:0.2f}G"
+  },
+  "cpu": {
+    "interval": 4,    
+    "format": "<span color='#FF9F0A'> </span>{avg_frequency}GHz:{usage}%",
+    "tooltip": true
+  },
+  "clock": {
+    "timezone": "Asia/Kathmandu",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": " {:%H:%M}"
+  },
+  "tray": {
+    "show-passive-items": true,
+    "icon-size": 18,
+    "spacing": 6
+  },  
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "<span color='#FFD700'>{icon}</span>{percent}",
+    "on-click": "killall gammastep",
+    "on-click-right": "gammastep -O 4000",
+    "tooltip": true,
+    "tooltip-format": "{percent}%",
+    "format-icons": [
+      "<span color='#696969'> 󰃞 </span>",
+      "<span color='#A9A9A9'> 󰃝 </span>",
+      "<span color='#FFFF66'> 󰃟 </span>",
+      "<span color='#FFD700'> 󰃠 </span>" 
+    ]
+  },
+    
+  "bluetooth": {
+    "format": "<span color='#00BFFF'> </span>{status} ",
+    "format-connected": "<span color='#00BFFF'> </span>{device_alias} ",
+    "format-connected-battery": "<span color='#00BFFF'> </span>{device_battery_percentage}% ",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+
+  "custom/updates": {
+    "format": "{}{icon}",
+    "return-type": "json",
+    "format-icons": {
+        "has-updates": "󱍷 ",
+        "updated": ""
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --no-zero-output"
+  },
+  "custom/nvidia": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1%:\\2°C /g'",
+    "format": "🖥️{}",
+    "interval": 2
+   },
+
+  "privacy": {
+	"icon-spacing": 2,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	],
+	"ignore-monitor": true
+    },
+   "temperature": {
+    "format": "<span color='#FF9F0A'></span>{temperatureC}°C "
+    },
+   "mpris": {
+	"format": "{player_icon}{dynamic}",
+	"format-paused": "{status_icon}<i>{dynamic}</i>",
+    "dynamic-order": ["title","artist"],
+    "dynamic-len": 25,
+    "dynamic-importance-order": ["title","artist"],    
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸ "
+	}
+    }
+}
