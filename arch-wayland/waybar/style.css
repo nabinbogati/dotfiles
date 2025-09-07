@@ -18,6 +18,7 @@
 #network,
 #window,
 #custom-updates,
+#custom-wleave,
 #tray{
   background-color: rgba(15,27,53,0.9);
   padding: 4px 6px; 
@@ -32,6 +33,7 @@
 #temperature,
 #cpu,
 #custom-nvidia,
+#custom-wleave,
 #clock,
 #power-profiles-daemon,
 #bluetooth,
