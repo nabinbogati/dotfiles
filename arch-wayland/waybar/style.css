@@ -4,6 +4,7 @@
   font-weight: bold;
   font-size: 13px;
   color: #dcdfe1;
+  margin: 1px;
 }
 
 #waybar {
@@ -44,7 +45,8 @@
   margin-top: 6px; 
   padding: 4px 4px; 
   border-radius: 6px;
-  margin-right: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 #pulseaudio.muted {
