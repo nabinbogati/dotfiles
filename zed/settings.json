@@ -7,15 +7,47 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "use_modifier_to_send": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_value_hints": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50,
+    "toggle_on_modifiers_press": {
+      "control": false,
+      "alt": false,
+      "shift": false,
+      "platform": false,
+      "function": false
+    }
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "vim_mode": true,
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_size": 15,
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
   "buffer_font_size": 15,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Macchiato",
-    "dark": "Catppuccin Macchiato"
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   },
   "languages": {
     "Python": {
