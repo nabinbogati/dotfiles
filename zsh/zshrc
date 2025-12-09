@@ -43,7 +43,7 @@ alias vim=nvim
 alias nvim=nvim
 
 # fdfind 
-alias fd=fdfind
+# alias fd=fdfind
 
 # git 
 alias g="git"
@@ -102,37 +102,15 @@ bindkey "^N" down-line-or-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-_dark () {
-  # sed -i '' 's/latte/mocha/' ~/.config/alacritty/alacritty.toml
-  sed -i 's/latte/mocha/' ~/dotfiles/tmux/tmux.conf
-  sed -i 's/latte/mocha/' ~/dotfiles/nvim/lua/plugins/catppuccin.lua
-
-  # reload tmux
-  tmux source-file ~/.tmux.conf
-}
-
-
-# set light working env
-_light () {
-  # sed -i '' 's/mocha/latte/' ~/.config/alacritty/alacritty.toml
-  sed -i 's/mocha/latte/' ~/dotfiles/tmux/tmux.conf
-  sed -i 's/mocha/latte/' ~/dotfiles/nvim/lua/plugins/catppuccin.lua
-
-  # reload tmux
-  tmux source-file ~/.tmux.conf
-}
-
-
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/flutter/bin"
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 ### Android configs
 export ANDROID_HOME=~/Android/sdk
 export PATH="$PATH:/$ANDROID_HOME/cmdline-tools/latest/bin"
 export PATH="$PATH:/$ANDROID_HOME/platform-tools"
 export PATH="$PATH:/$ANDROID_HOME/emulator"
-
-### Flutter path
-export PATH="$PATH:$HOME/.flutter-sdk/flutter/bin"
 
 # disable bytecode generation
 export PYTHONDONTWRITEBYTECODE=true
@@ -168,3 +146,18 @@ alias sqlite="litecli"
 eval "$(uv generate-shell-completion zsh)"
 
 . "$HOME/.local/bin/env"
+
+alias start="niri-session"
+
+toggle-theme() {
+  current=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
+  if [ "$current" = "prefer-dark" ]; then
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+    echo "Switched to light mode. Restart apps if needed."
+  else
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+    echo "Switched to dark mode. Restart apps if needed."
+  fi
+}

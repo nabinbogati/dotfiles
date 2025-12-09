@@ -264,6 +264,34 @@ layout {
     }
 }
 
+recent-windows {
+    debounce-ms 750
+    open-delay-ms 150
+    highlight {
+        active-color "#cba6f7"      // Catppuccin Mocha mauve
+        urgent-color "#f38ba8ff"      // Catppuccin Mocha red
+        padding 8
+        corner-radius 12
+    }
+
+    previews {
+        max-height 480
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -369,7 +397,7 @@ window-rule {
 window-rule {
     match is-active=false
     match app-id=".*"
-    opacity 0.9
+    opacity 0.95
     draw-border-with-background false
 }
 
@@ -393,7 +421,7 @@ binds {
     Mod+T hotkey-overlay-title="ghostty" { spawn "ghostty"; }
     Mod+Space hotkey-overlay-title="fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="swaylock" { spawn "swaylock"; }
-    Ctrl+Alt+L hotkey-overlay-title="wleave" { spawn "wleave"; }
+    Ctrl+Alt+L hotkey-overlay-title="wleave" { spawn "wleave" "--show-keybinds"; }
     Ctrl+Alt+H hotkey-overlay-title="clipse" { spawn "ghostty" "--title=clipse" "-e" "clipse";}
     Mod+N {spawn "dunstctl" "history-pop";}
 
