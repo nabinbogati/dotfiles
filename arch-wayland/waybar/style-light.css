@@ -1,0 +1,95 @@
+* {
+  font-family: "JetBrainsMonoNerdFontMono";
+  font-weight: bold;
+  font-size: 13px;
+  color: #4c4f69; /* text */
+  margin: 1px;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+}
+
+#mpris,
+#privacy,
+#workspaces,
+#network,
+#window,
+#custom-updates,
+#custom-wleave,
+#tray {
+  background-color: rgba(239, 241, 245, 0.9); /* base */
+  padding: 4px 6px;
+  margin-top: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+
+#memory,
+#temperature,
+#cpu,
+#custom-nvidia,
+#custom-wleave,
+#clock,
+#power-profiles-daemon,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery {
+  background-color: rgba(239, 241, 245, 0.9); /* base */
+  margin-top: 6px;
+  padding: 4px 4px;
+  border-radius: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#clock {
+  padding: 4px 12px;
+}
+
+#pulseaudio.muted {
+  color: #d20f39; /* red */
+}
+
+#bluetooth:hover,
+#network:hover,
+#backlight:hover,
+#battery:hover,
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#clock:hover,
+#window:hover {
+  background-color: rgba(188, 192, 204, 0.9); /* surface1 */
+}
+
+#window {
+}
+
+#workspaces button:hover {
+  background-color: rgba(30, 102, 245, 0.2); /* blue with transparency */
+  margin: 0 2px;
+  border-radius: 12px;
+}
+
+#workspaces button.active {
+  background-color: #1e66f5; /* blue */
+  color: #eff1f5; /* base */
+  padding: 2px 4px;
+  margin: 0 2px;
+  border-radius: 12px;
+}
+
+#workspaces button {
+  min-width: 20px;
+  background: transparent;
+  border: 1px;
+  color: #9ca0b0; /* overlay0 */
+  padding: 0px 0px;
+  font-weight: bold;
+}

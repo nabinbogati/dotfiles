@@ -1,0 +1,52 @@
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: rgba(239, 241, 245, 0.80); /* base */
+}
+
+button {
+	border-radius: 0;
+	border-color: #7287fd; /* lavender */
+	text-decoration-color: #4c4f69; /* text */
+	color: #4c4f69; /* text */
+	background-color: #e6e9ef; /* mantle */
+	border-style: solid;
+	border-width: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+	opacity: 0.80;
+}
+
+button:focus, button:active, button:hover {
+	background-color: #bcc0cc; /* surface1 */
+	outline-style: none;
+	opacity: 0.80;
+}
+
+#lock {
+    background-image: url("/home/nabin/.config/wleave/icons/lock.svg");
+}
+
+#logout {
+    background-image: url("/home/nabin/.config/wleave/icons/logout.svg");
+}
+
+#suspend {
+    background-image: url("/home/nabin/.config/wleave/icons/suspend.svg");
+}
+
+#hibernate {
+    background-image: url("/home/nabin/.config/wleave/icons/hibernate.svg");
+}
+
+#shutdown {
+    background-image: url("/home/nabin/.config/wleave/icons/shutdown.svg");
+}
+
+#reboot {
+    background-image: url("/home/nabin/.config/wleave/icons/reboot.svg");
+}
