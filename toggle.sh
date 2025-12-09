@@ -8,7 +8,10 @@ QT6CT_CONF="$HOME/.config/qt6ct/qt6ct.conf"
 ZSHENV="$HOME/.zshenv"
 
 get_current_theme() {
-  if grep -q "GTK_THEME=Adwaita:dark" "$ZSHENV" 2>/dev/null; then
+  # Check gsettings first (actual system state)
+  local gtk_theme=$(gsettings get org.gnome.desktop.interface gtk-theme 2>/dev/null | tr -d "'")
+
+  if [[ "$gtk_theme" == *"dark"* ]] || [[ "$gtk_theme" == *"Dark"* ]]; then
     echo "dark"
   else
     echo "light"

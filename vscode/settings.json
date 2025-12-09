@@ -10,11 +10,24 @@
     "terminal.integrated.defaultProfile.osx": "",
     "editor.dropIntoEditor.preferences": [
     ],
-    "workbench.colorTheme": "Catppuccin Latte",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "editor.fontVariations": false,
     "catppuccin.italicComments": false,
     "catppuccin.italicKeywords": false,
     "workbench.editor.enablePreview": false,
     "workbench.settings.applyToAllProfiles": [
-    ]
+
+    ],
+    "[dart]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "Dart-Code.dart-code",
+        "editor.inlayHints.enabled": "offUnlessPressed"
+    },
+    "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "window.autoDetectColorScheme": true,
+    "editor.codeActionsOnSave": {}
 }
