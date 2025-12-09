@@ -1,0 +1,225 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0001" }
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0005" }
+    },
+    
+    // Kill/delete operations
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u000b" }
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0015" }
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0017" }
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0019" }
+    },
+    
+    // Character navigation
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0006" }
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0002" }
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0004" }
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0008" }
+    },
+    
+    // History navigation
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0010" }
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u000e" }
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0012" }
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0013" }
+    },
+    
+    // Transpose
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0014" }
+    },
+    
+    // Clear screen
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u000c" }
+    },
+    
+    // Word navigation (Alt/Meta keys)
+    {
+        "key": "alt+f",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001bf" }
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001bb" }
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001bd" }
+    },
+    {
+        "key": "alt+backspace",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001b\u007f" }
+    },
+    {
+        "key": "alt+.",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001b." }
+    },
+    
+    // Case conversion
+    {
+        "key": "alt+u",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001bu" }
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001bl" }
+    },
+    {
+        "key": "alt+c",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001bc" }
+    },
+    
+    // Misc useful bindings
+    {
+        "key": "ctrl+x ctrl+e",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u0018\u0005" }
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001d" }
+    },
+    {
+        "key": "ctrl+_",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": { "text": "\u001f" }
+    },
+    {
+    "key": "ctrl+b k",
+    "command": "workbench.action.navigateUp",
+    "when": "terminalFocus"
+    },
+    // Ctrl+B then J to move to terminal below
+    {
+        "key": "ctrl+b j",
+        "command": "workbench.action.terminal.focus",
+        "when": "editorFocus"
+    },
+    
+    // Ctrl+B (alone) to toggle between terminal and editor
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.terminal.focus",
+        "when": "editorFocus && !terminalFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    
+    // Ctrl+B then H to focus explorer
+    {
+        "key": "ctrl+b h",
+        "command": "workbench.view.explorer"
+    },
+    
+    // Ctrl+B then L to focus back to editor from anywhere
+    {
+        "key": "ctrl+b l",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+]
+

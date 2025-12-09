@@ -1,0 +1,20 @@
+{
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "keyboard.dispatch": "keyCode",
+    "dart.flutterSdkPath": "/home/nabin/flutter",
+    "terminal.integrated.defaultProfile.osx": "",
+    "editor.dropIntoEditor.preferences": [
+    ],
+    "workbench.colorTheme": "Catppuccin Latte",
+    "editor.fontVariations": false,
+    "catppuccin.italicComments": false,
+    "catppuccin.italicKeywords": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.settings.applyToAllProfiles": [
+    ]
+}
