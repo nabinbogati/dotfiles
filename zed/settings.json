@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "helix_mode": false,
+  "show_completion_documentation": false,
+  "inline_code_actions": false,
+  "agent_buffer_font_size": 18.0,
+  "agent_ui_font_size": 18.0,
   "agent": {
     "use_modifier_to_send": true
   },
@@ -15,7 +20,7 @@
   },
   "inlay_hints": {
     "enabled": true,
-    "show_value_hints": true,
+    "show_value_hints": false,
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true,
@@ -42,29 +47,11 @@
     "dark": "Zed (Default)"
   },
   "base_keymap": "VSCode",
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "ui_font_size": 20.0,
+  "buffer_font_size": 20.0,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Mocha",
-    "dark": "Catppuccin Mocha"
-  },
-  "languages": {
-    "Python": {
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
-        },
-        {
-          "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
+    "light": "Catppuccin Latte - No Italics",
+    "dark": "Catppuccin Mocha - No Italics"
   }
 }

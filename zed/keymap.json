@@ -9,7 +9,10 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "ctrl-b l": "workspace::ActivatePaneRight",
+      "ctrl-b h": "workspace::ActivatePaneLeft",
+      "ctrl-b k": "workspace::ActivatePaneUp",
+      "ctrl-b j": "workspace::ActivatePaneDown",
     }
   },
   {
@@ -25,7 +28,9 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-b k": "terminal_panel::ToggleFocus"
+      "ctrl-b k": "terminal_panel::ToggleFocus",
+      "ctrl-p": null,
+      "ctrl-n": null
     }
   }
 ]
