@@ -7,21 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_weight": 400.0,
   "helix_mode": false,
   "show_completion_documentation": false,
   "inline_code_actions": false,
   "agent_buffer_font_size": 18.0,
   "agent_ui_font_size": 18.0,
   "agent": {
-    "use_modifier_to_send": true
+    "use_modifier_to_send": true,
   },
   "minimap": {
-    "show": "never"
+    "show": "never",
   },
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "show_value_hints": false,
-    "show_type_hints": true,
+    "show_type_hints": false,
     "show_parameter_hints": true,
     "show_other_hints": true,
     "show_background": false,
@@ -32,26 +33,47 @@
       "alt": false,
       "shift": false,
       "platform": false,
-      "function": false
-    }
+      "function": false,
+    },
   },
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "vim_mode": true,
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "base_keymap": "VSCode",
-  "ui_font_size": 20.0,
+  "ui_font_size": 18.0,
   "buffer_font_size": 20.0,
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte - No Italics",
-    "dark": "Catppuccin Mocha - No Italics"
-  }
+    "dark": "Catppuccin Mocha - No Italics",
+  },
+  "languages": {
+    "Python": {
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff",
+          },
+        },
+      ],
+    },
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "typeCheckingMode": "off",
+        },
+      },
+    },
+  },
 }
