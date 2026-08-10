@@ -29,5 +29,6 @@
     "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
     "workbench.preferredLightColorTheme": "Catppuccin Latte",
     "window.autoDetectColorScheme": true,
-    "editor.codeActionsOnSave": {}
+    "editor.codeActionsOnSave": {},
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font"
 }

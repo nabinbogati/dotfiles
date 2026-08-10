@@ -30,7 +30,8 @@
     "bindings": {
       "ctrl-b k": "terminal_panel::ToggleFocus",
       "ctrl-p": null,
-      "ctrl-n": null
+      "ctrl-n": null,
+      "ctrl-shift-t": "workspace::NewTerminal"
     }
   }
 ]
