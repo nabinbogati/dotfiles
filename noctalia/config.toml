@@ -218,3 +218,7 @@ path = "/home/nabin/Pictures/Wallpapers/minimal.jpg"
 [control_center]
 width=1000
 sidebar="compact"
+
+[keybinds]
+up = ["up", "ctrl+p"]
+down = ["down", "ctrl+n"]
